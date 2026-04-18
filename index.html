@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nahass AI — Actionable Intelligence</title>
+<meta name="description" content="Physician-owned clinical intelligence practice. Clinical, Quality, Predictive, and Operational Intelligence — built on deep Epic expertise and a full enterprise data stack. Led by a critical care physician and health system VP of informatics."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:#0E1A2B; --ink-soft:#2A3446;
+  --paper:#F3EDE2; --paper-warm:#EDE4D2; --bone:#E3D9C4;
+  --signal:#B8492A; --signal-deep:#8E3418;
+  --vital:#0F5E54; --mute:#6B6456;
+  --rule:rgba(14,26,43,.12); --rule-strong:rgba(14,26,43,.35);
+  --serif:"Fraunces","Iowan Old Style",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.1 0 0 0 0 0.17 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:2;}
+@media(max-width:680px){.wrap{padding:0 20px;}}
+
+/* ── NAV ── */
+nav{padding:24px 0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);}
+.logo{display:flex;align-items:baseline;gap:9px;text-decoration:none;color:var(--ink);}
+.logo-mark{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 120,"SOFT" 30;font-weight:500;font-size:26px;letter-spacing:-.015em;}
+.logo-dot{width:5px;height:5px;border-radius:50%;background:var(--signal);transform:translateY(-3px);}
+.logo-sub{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);}
+.logo-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);border-left:1px solid var(--rule-strong);padding-left:12px;margin-left:2px;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--ink-soft);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
+.nav-links a:hover{color:var(--signal);}
+.btn{display:inline-flex;align-items:center;padding:10px 20px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:13px;font-weight:500;border-radius:2px;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--signal);transform:translateY(-1px);}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule-strong);}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);}
+@media(max-width:920px){.nav-links a:not(.btn){display:none;}.logo-tag{display:none;}}
+
+/* ── HERO ── */
+.hero{padding:100px 0 80px;position:relative;}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:36px;display:flex;align-items:center;gap:14px;}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--signal);}
+h1.display{font-family:var(--serif);font-variation-settings:"opsz" 144,"SOFT" 20;font-weight:340;font-size:clamp(48px,7vw,102px);line-height:.97;letter-spacing:-.028em;max-width:16ch;margin-bottom:32px;}
+h1.display em{font-style:italic;font-weight:380;color:var(--signal);font-variation-settings:"opsz" 144,"SOFT" 80;}
+.lede{font-size:19px;line-height:1.56;color:var(--ink-soft);max-width:60ch;margin-bottom:44px;font-weight:300;}
+.lede strong{font-weight:500;color:var(--ink);}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+.side-mark{position:absolute;right:32px;top:140px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);writing-mode:vertical-rl;transform:rotate(180deg);}
+@media(max-width:980px){.side-mark{display:none;}}
+
+/* ── FOUR-PILLAR NAV STRIP ── */
+.pillar-nav{background:var(--ink);color:var(--paper);}
+.pillar-nav .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+@media(max-width:700px){.pillar-nav .wrap{grid-template-columns:repeat(2,1fr);}}
+.pn{
+  padding:22px 24px;border-right:1px solid rgba(243,237,226,.1);
+  text-decoration:none;display:block;transition:background .2s;
+}
+.pn:last-child{border-right:none;}
+.pn:hover{background:rgba(184,73,42,.25);}
+.pn .pn-num{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:6px;}
+.pn .pn-name{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 60,"SOFT" 40;font-size:17px;color:var(--paper);letter-spacing:-.01em;}
+
+/* ── METRICS ── */
+.metrics{background:var(--ink);color:var(--paper);padding:72px 0;position:relative;border-top:1px solid rgba(243,237,226,.1);}
+.metrics::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.93 0 0 0 0 0.88 0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+.metrics .wrap{position:relative;z-index:2;}
+.m-label{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--signal);margin-bottom:40px;display:flex;align-items:center;gap:14px;}
+.m-label::before{content:"";width:32px;height:1px;background:var(--signal);}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;border-top:1px solid rgba(243,237,226,.18);padding-top:44px;}
+@media(max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);gap:40px;}}
+@media(max-width:500px){.metric-grid{grid-template-columns:1fr;}}
+.metric .num{font-family:var(--serif);font-variation-settings:"opsz" 144,"SOFT" 10;font-weight:300;font-size:clamp(52px,5.5vw,76px);line-height:1;letter-spacing:-.03em;color:var(--paper);margin-bottom:14px;}
+.metric .num .s{font-size:.5em;color:var(--signal);vertical-align:.4em;margin-left:4px;}
+.metric .cap{font-size:13.5px;color:rgba(243,237,226,.75);line-height:1.45;max-width:28ch;}
+.metric .src{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,237,226,.38);margin-top:10px;}
+
+/* ── PILLARS ── */
+.pillar{padding:108px 0;border-top:1px solid var(--rule);}
+.pillar.alt{background:var(--paper-warm);}
+.pillar-inner{display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:start;}
+@media(max-width:960px){.pillar-inner{grid-template-columns:1fr;gap:40px;}}
+.p-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.p-kicker::before{content:"";width:24px;height:1px;background:var(--signal);}
+.pillar-left h2{font-family:var(--serif);font-variation-settings:"opsz" 120,"SOFT" 30;font-weight:340;font-size:clamp(28px,3.2vw,44px);line-height:1.05;letter-spacing:-.02em;margin-bottom:20px;}
+.pillar-left h2 em{font-style:italic;color:var(--signal);font-variation-settings:"opsz" 120,"SOFT" 80;}
+.pillar-left .desc{font-size:15px;color:var(--ink-soft);line-height:1.65;margin-bottom:16px;}
+.pillar-left .desc strong{color:var(--ink);font-weight:500;}
+.tech-strip{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px;}
+.tt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding:4px 9px;border:1px solid var(--rule);transition:border-color .2s,color .2s;cursor:default;}
+.tt:hover{border-color:var(--signal);color:var(--signal);}
+
+/* SERVICE CARDS */
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);}
+@media(max-width:660px){.sc-grid{grid-template-columns:1fr;}}
+.sc{padding:26px 28px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .22s;}
+.sc:nth-child(2n){border-right:none;}
+.sc:nth-last-child(-n+2){border-bottom:none;}
+@media(max-width:660px){
+  .sc{border-right:none!important;}
+  .sc:nth-last-child(-n+2){border-bottom:1px solid var(--rule);}
+  .sc:last-child{border-bottom:none;}
+}
+.sc:hover{background:var(--bone);}
+.pillar.alt .sc:hover{background:var(--paper);}
+.sc-num{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+.sc h3{font-family:var(--serif);font-variation-settings:"opsz" 60,"SOFT" 40;font-weight:380;font-size:19px;line-height:1.15;letter-spacing:-.01em;color:var(--ink);margin-bottom:9px;}
+.sc p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;}
+.sc ul{list-style:none;padding:0;}
+.sc ul li{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--mute);padding:3px 0;border-top:1px dashed var(--rule);}
+.sc ul li:first-child{border-top:none;}
+
+/* FULL-WIDTH HIGHLIGHT CARD */
+.hl-card{
+  grid-column:span 2;
+  padding:32px 36px;
+  border-top:1px solid var(--rule);
+  background:var(--ink);color:var(--paper);
+  position:relative;overflow:hidden;
+}
+@media(max-width:660px){.hl-card{grid-column:span 1;}}
+.hl-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.93 0 0 0 0 0.88 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+.hl-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;}
+@media(max-width:680px){.hl-inner{grid-template-columns:1fr;}}
+.hl-badge{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.hl-badge::before{content:"";width:20px;height:1px;background:var(--signal);}
+.hl-card h3{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 80,"SOFT" 50;font-weight:380;font-size:23px;line-height:1.2;color:var(--paper);margin-bottom:12px;}
+.hl-card p{font-size:14px;color:rgba(243,237,226,.72);line-height:1.62;max-width:64ch;}
+.hl-feats{display:flex;flex-direction:column;gap:6px;flex-shrink:0;min-width:200px;}
+@media(max-width:680px){.hl-feats{flex-direction:row;flex-wrap:wrap;margin-top:20px;}}
+.hl-f{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:rgba(243,237,226,.6);padding:6px 12px;border:1px solid rgba(184,73,42,.4);display:flex;align-items:center;gap:8px;}
+.hl-f::before{content:"✓";color:var(--signal);font-size:9px;}
+
+/* ── ABOUT ── */
+section.band{padding:120px 0;}
+@media(max-width:680px){section.band{padding:80px 0;}}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:60px;margin-bottom:64px;align-items:end;border-bottom:1px solid var(--rule);padding-bottom:28px;}
+@media(max-width:780px){.section-head{grid-template-columns:1fr;gap:24px;}}
+.section-head .sk{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);}
+.section-head h2{font-family:var(--serif);font-variation-settings:"opsz" 120,"SOFT" 30;font-weight:330;font-size:clamp(36px,4.4vw,58px);line-height:1.02;letter-spacing:-.022em;}
+.section-head h2 em{font-style:italic;color:var(--signal);font-variation-settings:"opsz" 120,"SOFT" 80;}
+.about-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+.portrait{background:var(--bone);aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--rule);}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;filter:saturate(.92) contrast(1.02);}
+.portrait::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(14,26,43,.35) 0%,rgba(14,26,43,0) 32%);}
+.ptag{position:absolute;bottom:18px;left:20px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);}
+.sbar{position:absolute;top:0;left:0;height:4px;width:40%;background:var(--signal);z-index:2;}
+.about-body h3{font-family:var(--serif);font-variation-settings:"opsz" 100,"SOFT" 30;font-weight:360;font-size:clamp(28px,3vw,40px);line-height:1.1;margin-bottom:8px;}
+.about-body .cred-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin-bottom:28px;}
+.about-body p{font-size:16px;line-height:1.65;color:var(--ink-soft);margin-bottom:20px;max-width:60ch;}
+.about-body p strong{color:var(--ink);font-weight:500;}
+.cred-grid{margin-top:36px;border-top:1px solid var(--rule);padding-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px 36px;}
+@media(max-width:560px){.cred-grid{grid-template-columns:1fr;}}
+.ci-item .k{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px;}
+.ci-item .v{font-size:14px;color:var(--ink);line-height:1.4;}
+
+/* ── WORK ── */
+.work-list{border-top:1px solid var(--rule);}
+.work-row{display:grid;grid-template-columns:80px 1fr 180px 160px;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:baseline;transition:padding .22s;}
+.work-row:hover{padding-left:12px;}
+.work-row:hover .wt{color:var(--signal);}
+@media(max-width:780px){.work-row{grid-template-columns:60px 1fr;gap:16px;}.wtg,.wv{display:none;}}
+.wy{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.08em;}
+.wt{font-family:var(--serif);font-variation-settings:"opsz" 60,"SOFT" 30;font-size:20px;line-height:1.25;font-weight:380;color:var(--ink);transition:color .22s;}
+.wtg{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);}
+.wv{font-size:13px;color:var(--mute);text-align:right;}
+
+/* ── CTA ── */
+.cta-band{background:var(--ink);color:var(--paper);padding:120px 0;position:relative;overflow:hidden;}
+.cta-band::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.38;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.93 0 0 0 0 0.88 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+.cta-band .wrap{position:relative;z-index:2;}
+.cta-band h2{font-family:var(--serif);font-variation-settings:"opsz" 144,"SOFT" 30;font-weight:320;font-size:clamp(40px,5.5vw,72px);line-height:1.02;letter-spacing:-.025em;max-width:18ch;margin-bottom:36px;}
+.cta-band h2 em{font-style:italic;color:var(--signal);font-variation-settings:"opsz" 144,"SOFT" 80;}
+.cta-band .sub{font-size:17px;color:rgba(243,237,226,.75);max-width:56ch;margin-bottom:40px;line-height:1.6;font-weight:300;}
+.cta-band .sub strong{color:var(--paper);font-weight:500;}
+.contact-line{display:flex;gap:32px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;letter-spacing:.05em;padding-top:32px;border-top:1px solid rgba(243,237,226,.18);margin-top:36px;}
+.contact-line a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--signal);padding-bottom:2px;}
+.contact-line a:hover{color:var(--signal);}
+.contact-line .k{color:rgba(243,237,226,.5);margin-right:10px;text-transform:uppercase;letter-spacing:.18em;font-size:10px;}
+
+/* ── FOOTER ── */
+footer{padding:40px 0 44px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);}
+.foot-logo{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 60,"SOFT" 40;font-size:18px;color:var(--ink);text-transform:none;}
+
+/* ── ANIMATION ── */
+.reveal{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+.d1{animation-delay:.05s;}.d2{animation-delay:.18s;}.d3{animation-delay:.31s;}.d4{animation-delay:.44s;}
+@keyframes rise{to{opacity:1;transform:translateY(0);}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;animation:none;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#top">
+      <span class="logo-mark">nahass</span>
+      <span class="logo-dot"></span>
+      <span class="logo-sub">AI</span>
+      <span class="logo-tag">Actionable Intelligence</span>
+    </a>
+    <div class="nav-links">
+      <a href="#clinical">Clinical</a>
+      <a href="#quality">Quality</a>
+      <a href="#predictive">Predictive</a>
+      <a href="#operational">Operational</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Start a conversation →</a>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="side-mark">nahass.ai — Est. 2026</div>
+    <div class="eyebrow reveal d1">A physician-owned intelligence practice</div>
+    <h1 class="display reveal d2">Data, insight, <em>action</em> — in the order that saves lives.</h1>
+    <p class="lede reveal d3">
+      <strong>Nahass AI</strong> delivers actionable intelligence across four domains —
+      <strong>Clinical</strong>, <strong>Quality</strong>, <strong>Predictive</strong>,
+      and <strong>Operational</strong> — by connecting the data sources health systems
+      already own and interpreting them through a physician who has shipped the work at scale.
+      Not dashboards for their own sake. Intelligence that moves a number that matters.
+    </p>
+    <div class="cta-row reveal d4">
+      <a class="btn" href="#contact">Book a 30-minute consult →</a>
+      <a class="btn ghost" href="#clinical">See the four domains →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR-PILLAR STRIP -->
+<nav class="pillar-nav" aria-label="Intelligence domains">
+  <div class="wrap">
+    <a class="pn" href="#clinical">
+      <div class="pn-num">01</div>
+      <div class="pn-name">Clinical Intelligence</div>
+    </a>
+    <a class="pn" href="#quality">
+      <div class="pn-num">02</div>
+      <div class="pn-name">Quality Intelligence</div>
+    </a>
+    <a class="pn" href="#predictive">
+      <div class="pn-num">03</div>
+      <div class="pn-name">Predictive Intelligence</div>
+    </a>
+    <a class="pn" href="#operational">
+      <div class="pn-num">04</div>
+      <div class="pn-name">Operational Intelligence</div>
+    </a>
+  </div>
+</nav>
+
+<!-- METRICS -->
+<section class="metrics" id="proof">
+  <div class="wrap">
+    <div class="m-label">Proof, not pilots</div>
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="num">18–26<span class="s">%</span></div>
+        <div class="cap">ICU mortality reduction, enterprise deterioration-index deployment across 12 hospitals.</div>
+        <div class="src">NEJM AI · Pending</div>
+      </div>
+      <div class="metric">
+        <div class="num">&gt;3<span class="s">%</span></div>
+        <div class="cap">Absolute sepsis mortality reduction — bundle compliance, coding, and source control.</div>
+        <div class="src">12-hospital initiative · 2024–25</div>
+      </div>
+      <div class="metric">
+        <div class="num">$50<span class="s">M</span></div>
+        <div class="cap">Incremental revenue from AutoCDI. CMI +0.4; mortality index from 1.2 to 0.7.</div>
+        <div class="src">Documentation strategy · 2025</div>
+      </div>
+      <div class="metric">
+        <div class="num">44<span class="s">%</span></div>
+        <div class="cap">IV fluid reduction during a national shortage — shorter LOS, published nationally.</div>
+        <div class="src">J. Healthcare Quality · 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PILLAR 1 — CLINICAL INTELLIGENCE ═══ -->
+<div class="pillar" id="clinical">
+  <div class="wrap">
+    <div class="pillar-inner">
+      <div class="pillar-left">
+        <div class="p-kicker">01 — Clinical Intelligence</div>
+        <h2>CDS that changes what clinicians <em>do</em>.</h2>
+        <p class="desc">Most clinical decision support fails because it was designed by people who have never been paged at 2am. We build from the Epic backend outward — deep Physician Builder expertise, BPA logic, and notification design — then <strong>study the impact of every single change</strong> before declaring it a success.</p>
+        <p class="desc">Methodology: hypothesize, build, measure, iterate. Every intervention earns its place with data. Our most impactful project: <strong>AutoCDI</strong> — a multi-phase documentation strategy that moved CMI by 0.4 points and captured ~$50M in incremental revenue. Our most precise: notification-driven extubation reminders for CABG patients, reducing unnecessary ventilator days through targeted, evidence-backed nudges.</p>
+        <div class="tech-strip">
+          <span class="tt">Epic Clarity</span><span class="tt">Caboodle</span>
+          <span class="tt">Physician Builder</span><span class="tt">MSSQL</span>
+          <span class="tt">Tableau</span><span class="tt">Python</span><span class="tt">R</span>
+        </div>
+      </div>
+      <div class="pillar-left" style="width:100%">
+        <div class="sc-grid">
+          <div class="sc">
+            <div class="sc-num">1.1 — AutoCDI</div>
+            <h3>Documentation Intelligence</h3>
+            <p>Multi-phase CDI strategy integrating real-time physician prompts, discharge clarification notes, and outcome attribution. Built to move the mortality index and CMI — not just compliant documentation.</p>
+            <ul>
+              <li>Physician CDI no-response reduction</li>
+              <li>Discharge clarification workflows</li>
+              <li>DNR documentation accuracy +10%</li>
+              <li>CMI &amp; mortality index tracking</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">1.2 — BPA Design</div>
+            <h3>Best Practice Alerts &amp; Order Sets</h3>
+            <p>Alert architecture that clinicians respect. We design trigger logic, response options, and tiered urgency — then measure acceptance rates and downstream behavior change to earn every alert's continued existence.</p>
+            <ul>
+              <li>CABG extubation reminders</li>
+              <li>Alert fatigue analysis &amp; reduction</li>
+              <li>Sepsis &amp; RRT trigger design</li>
+              <li>Order set optimization</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">1.3 — Sepsis &amp; Early Warning</div>
+            <h3>Clinical Early Warning Programs</h3>
+            <p>Bundle compliance, source control workflows, and rapid response trigger design — connected into the EHR so the right person is notified before the patient deteriorates further. Every threshold validated before going live.</p>
+            <ul>
+              <li>Sepsis bundle compliance &amp; coding</li>
+              <li>Rapid response escalation logic</li>
+              <li>ICU transfer decision support</li>
+              <li>HRRP readmission pathways</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">1.4 — Physician Builder</div>
+            <h3>Physician Builder Programs</h3>
+            <p>We build and lead — not just advise. Led a 25+ Physician Builder and 45 SmartUser program at a major health system. We can stand up yours from scratch or optimize the governance and output of an existing one.</p>
+            <ul>
+              <li>Physician Builder recruitment &amp; training</li>
+              <li>SmartUser program design</li>
+              <li>Build governance &amp; prioritization</li>
+              <li>Epic build execution &amp; testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PILLAR 2 — QUALITY INTELLIGENCE ═══ -->
+<div class="pillar alt" id="quality">
+  <div class="wrap">
+    <div class="pillar-inner">
+      <div class="pillar-left">
+        <div class="p-kicker">02 — Quality Intelligence</div>
+        <h2>Every index, every ranking, every <em>opportunity</em>.</h2>
+        <p class="desc">We connect CMS claims, Epic Clarity, Caboodle, Vizient, and clinical data into a unified analytical layer — then deliver the reports that translate into decisions. Not one source. The whole picture, interpreted by a clinician who knows what each number means at the bedside and in the boardroom.</p>
+        <p class="desc">We support <strong>Vizient Mortality, LOS, and Direct Cost Index</strong> improvement; competitor and opportunity analysis; <strong>USNWR ranking</strong> strategy; and <strong>CMS star rating</strong> programs. Every report physician-authored, peer-benchmarked, and built to drive action — not fill a slide deck.</p>
+        <div class="tech-strip">
+          <span class="tt">MSSQL</span><span class="tt">Python</span><span class="tt">R</span>
+          <span class="tt">Tableau</span><span class="tt">Snowflake</span>
+          <span class="tt">Google Cloud</span><span class="tt">Azure</span><span class="tt">AWS</span>
+        </div>
+      </div>
+      <div class="pillar-left" style="width:100%">
+        <div class="sc-grid">
+          <div class="sc">
+            <div class="sc-num">2.1 — Vizient</div>
+            <h3>Vizient Mortality, LOS &amp; Cost</h3>
+            <p>Observed-to-expected deep dives by MS-DRG, service line, and attending — with specific, prioritized action plans. We identify whether your mortality index problem is coding, clinical, or both, and we build the program to fix it.</p>
+            <ul>
+              <li>O/E mortality disaggregation</li>
+              <li>Direct cost index analysis</li>
+              <li>LOS outlier identification</li>
+              <li>Peer group benchmarking</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">2.2 — CMS Stars</div>
+            <h3>CMS Star Rating Improvement</h3>
+            <p>Systematic analysis across all star measure groups — HCAHPS, outcomes, safety — with intervention prioritization based on measure weight, current gap, and realistic ceiling. We build the roadmap and the tracking.</p>
+            <ul>
+              <li>Measure-level gap analysis</li>
+              <li>HRRP &amp; HAC reduction strategy</li>
+              <li>VBP program optimization</li>
+              <li>Star trajectory modeling</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">2.3 — USNWR</div>
+            <h3>US News Rankings Strategy</h3>
+            <p>Ranking methodology decoded. We identify where you are losing points, where the fastest gains live, and what clinical and operational changes will move the ranking — with data that survives scrutiny from your CMO and board.</p>
+            <ul>
+              <li>Specialty ranking deep dives</li>
+              <li>Structural &amp; process measure gaps</li>
+              <li>Competitor quality comparison</li>
+              <li>Multi-year trajectory planning</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">2.4 — Market Intelligence</div>
+            <h3>Competitor &amp; Opportunity Analysis</h3>
+            <p>Using CMS, Vizient, and public claims data, we map your competitive quality position across service lines and geographies — and identify where market-share gaps and quality performance create high-value opportunities.</p>
+            <ul>
+              <li>Service-line market share analysis</li>
+              <li>Quality-adjusted positioning</li>
+              <li>Growth opportunity ranking</li>
+              <li>Strategic board briefings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PILLAR 3 — PREDICTIVE INTELLIGENCE ═══ -->
+<div class="pillar" id="predictive">
+  <div class="wrap">
+    <div class="pillar-inner">
+      <div class="pillar-left">
+        <div class="p-kicker">03 — Predictive Intelligence</div>
+        <h2>ML that goes from model to <em>clinical workflow</em>.</h2>
+        <p class="desc">Operationalizing clinical AI is not a data science problem — it is a clinical workflow problem wrapped in a governance problem. We handle all three. Threshold optimization, silent-mode validation, ambient AI monitoring, and enterprise-grade generative AI governance.</p>
+        <p class="desc">We have deployed deterioration indexes, readmission risk scores, and ICU mortality models across twelve hospitals — and built <strong>our own HIPAA-compliant, auditable LLM infrastructure</strong>, multimodal and guardrail-enabled, for enterprise health system use. That is not advisory. That is built and running.</p>
+        <div class="tech-strip">
+          <span class="tt">Python</span><span class="tt">R</span>
+          <span class="tt">Snowflake</span><span class="tt">Google Cloud</span>
+          <span class="tt">Azure</span><span class="tt">AWS</span><span class="tt">MSSQL</span>
+        </div>
+      </div>
+      <div class="pillar-left" style="width:100%">
+        <div class="sc-grid">
+          <div class="sc">
+            <div class="sc-num">3.1 — ML Operationalization</div>
+            <h3>Model Deployment &amp; Threshold Optimization</h3>
+            <p>We take models out of notebooks and get them into workflow. Deterioration index, readmission risk, ICU mortality — each validated in silent mode, thresholds optimized for your population, escalation rules designed to change behavior.</p>
+            <ul>
+              <li>Silent-mode → production sequencing</li>
+              <li>Threshold &amp; sensitivity optimization</li>
+              <li>Subgroup &amp; fairness validation</li>
+              <li>Post-deployment drift monitoring</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">3.2 — Generative AI</div>
+            <h3>GenAI Implementation &amp; Governance</h3>
+            <p>End-to-end generative AI programs for health systems — from analyst tooling to physician-facing applications. With governance frameworks that actually get approved by legal and compliance, not just the innovation committee.</p>
+            <ul>
+              <li>Use-case scoping &amp; prioritization</li>
+              <li>Enterprise governance policy design</li>
+              <li>Clinical workflow integration</li>
+              <li>ROI measurement frameworks</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">3.3 — Ambient AI</div>
+            <h3>Ambient AI Operationalization</h3>
+            <p>Ambient documentation tools are being adopted fast — with almost no clinical or ROI accountability. We build measurement frameworks tracking actual value: time saved, note quality, downstream alert performance, and attribution to outcomes.</p>
+            <ul>
+              <li>Vendor-agnostic evaluation</li>
+              <li>Clinical quality monitoring</li>
+              <li>ROI attribution modeling</li>
+              <li>Workflow integration design</li>
+            </ul>
+          </div>
+          <div class="hl-card">
+            <div class="hl-inner">
+              <div>
+                <div class="hl-badge">Proprietary Infrastructure</div>
+                <h3>HIPAA-Compliant Enterprise LLM Services</h3>
+                <p>Built — not procured. A fully HIPAA-compliant cloud LLM infrastructure supporting multimodal enterprise use across GCP, Azure, and AWS. Every prompt logged. Every output traceable. Every guardrail configurable. Designed for health systems that need auditability and observability before clinical deployment — from analysts writing SQL to physicians reviewing summaries. Available for licensing or deployment partnership.</p>
+              </div>
+              <div class="hl-feats">
+                <div class="hl-f">HIPAA-compliant by design</div>
+                <div class="hl-f">Full audit logging</div>
+                <div class="hl-f">Observability dashboard</div>
+                <div class="hl-f">Configurable guardrails</div>
+                <div class="hl-f">Multimodal support</div>
+                <div class="hl-f">GCP · Azure · AWS ready</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PILLAR 4 — OPERATIONAL INTELLIGENCE ═══ -->
+<div class="pillar alt" id="operational">
+  <div class="wrap">
+    <div class="pillar-inner">
+      <div class="pillar-left">
+        <div class="p-kicker">04 — Operational Intelligence</div>
+        <h2>Supply chain, utilization, and the data <em>between</em> the systems.</h2>
+        <p class="desc">Operational intelligence is what happens when you connect clinical data to operational data and ask a physician to interpret it. Not throughput for its own sake — utilization, supply, and staffing patterns analyzed through the lens of patient outcomes.</p>
+        <p class="desc">The proof: during the 2024 national IV fluid shortage, we built a novel integration of <strong>barcode scanning data, nursing administration records, and clinical outcome data</strong> — producing a real-time utilization dashboard that achieved a <strong>44% fluid reduction</strong> while simultaneously shortening length of stay. Published in the Journal for Healthcare Quality. That kind of intelligence only exists when you refuse to keep data in silos.</p>
+        <div class="tech-strip">
+          <span class="tt">MSSQL</span><span class="tt">Tableau</span><span class="tt">Python</span>
+          <span class="tt">R</span><span class="tt">Clarity</span><span class="tt">Caboodle</span>
+          <span class="tt">Snowflake</span>
+        </div>
+      </div>
+      <div class="pillar-left" style="width:100%">
+        <div class="sc-grid">
+          <div class="sc">
+            <div class="sc-num">4.1 — Supply Chain Intelligence</div>
+            <h3>Supply &amp; Utilization Analytics</h3>
+            <p>We connect supply chain, barcode scanning, nursing administration, and clinical outcome data to produce utilization intelligence that clinical and operational teams can act on together — not separately and too late.</p>
+            <ul>
+              <li>Real-time utilization dashboards</li>
+              <li>Shortage response &amp; substitution logic</li>
+              <li>Outcome-linked consumption analysis</li>
+              <li>Nursing workflow integration</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">4.2 — Throughput &amp; Capacity</div>
+            <h3>Throughput &amp; Capacity Intelligence</h3>
+            <p>LOS outliers, boarding patterns, discharge timing, and bed utilization — analyzed with clinical context so that the throughput recommendations don't inadvertently trade off patient safety for operational efficiency.</p>
+            <ul>
+              <li>LOS driver analysis by DRG</li>
+              <li>Discharge barrier identification</li>
+              <li>Boarding &amp; boarding-origin patterns</li>
+              <li>Capacity planning with clinical context</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">4.3 — Surveillance Dashboards</div>
+            <h3>Real-Time Operational Surveillance</h3>
+            <p>Built a respiratory virus dashboard detecting infection upticks two weeks before CDC data surfaced — enabling timely masking mandates. We design surveillance tooling that gives operational leaders early signal rather than lagging confirmation.</p>
+            <ul>
+              <li>Infection &amp; respiratory surveillance</li>
+              <li>Early-signal vs. lagging-indicator design</li>
+              <li>Policy-trigger threshold setting</li>
+              <li>MSSQL · Tableau · real-time refresh</li>
+            </ul>
+          </div>
+          <div class="sc">
+            <div class="sc-num">4.4 — Cross-System Integration</div>
+            <h3>Data Integration &amp; Reporting Services</h3>
+            <p>We connect CMS claims, Epic Clarity, Caboodle, supply chain, and nursing data into a single analytical layer — then build the recurring reports, dashboards, and executive summaries your teams will actually use to make decisions.</p>
+            <ul>
+              <li>Cross-dataset normalization</li>
+              <li>Custom dashboard &amp; report builds</li>
+              <li>Executive &amp; board summaries</li>
+              <li>Recurring intelligence delivery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="band" id="about" style="background:var(--paper-warm);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sk">— Principal</div>
+      <h2>Physician-owned. <em>Physician-led.</em> Operator first.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="portrait">
+        <div class="sbar"></div>
+        <img src="assets/nahass-portrait.jpg" alt="Thomas A. Nahass, MD"/>
+        <div class="ptag">— Thomas A. Nahass, MD</div>
+      </div>
+      <div class="about-body">
+        <h3>Thomas A. Nahass</h3>
+        <div class="cred-tag">MD · MS · FAMIA</div>
+        <p>Tom is a board-certified <strong>critical-care physician</strong> and the <strong>Vice President of Health Informatics</strong> (Central Region) at RWJBarnabas Health — a fourteen-billion-dollar, twelve-hospital health system where he leads clinical decision support, AI deployment, documentation integrity, quality programs, and operational analytics.</p>
+        <p>His perspective is deliberately integrated. <strong>Actionable intelligence is not any single tool</strong> — it is what happens when clinical data, operational data, quality data, and predictive models are synthesized by someone who still rounds on patients and sits in the steering committee the next morning. He has shipped every service this practice offers.</p>
+        <p>He trained in internal medicine at Rutgers and critical care at Memorial Sloan Kettering, earned an MS in clinical informatics from OHSU, and is a <strong>Fellow of the American Medical Informatics Association</strong>. Becker's <em>Rising Stars: Healthcare Leaders Under 40</em>, 2025.</p>
+        <div class="cred-grid">
+          <div class="ci-item">
+            <div class="k">Board Certifications</div>
+            <div class="v">Critical Care Medicine · Internal Medicine · Clinical Informatics</div>
+          </div>
+          <div class="ci-item">
+            <div class="k">Academic Appointment</div>
+            <div class="v">Clinical Assistant Professor, Rutgers RWJMS · Pulmonary &amp; Critical Care</div>
+          </div>
+          <div class="ci-item">
+            <div class="k">Current Research</div>
+            <div class="v">Heart failure deep phenotyping · ICU digital twins · Agentic AI &amp; RAG</div>
+          </div>
+          <div class="ci-item">
+            <div class="k">Tech Stack</div>
+            <div class="v">MSSQL · Python · R · Tableau · Snowflake · GCP · Azure · AWS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sk">— Selected work &amp; publications</div>
+      <h2>A record of <em>shipped</em> work.</h2>
+    </div>
+    <div class="work-list">
+      <div class="work-row">
+        <div class="wy">2025</div>
+        <div class="wt">Mortality impact of an AI-enabled deterioration index integrated with automated rapid response</div>
+        <div class="wtg">Original Research</div>
+        <div class="wv">NEJM AI · Submitted</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2025</div>
+        <div class="wt">AutoCDI multi-phase documentation strategy — CMI +0.4, mortality index 1.2→0.7, ~$50M captured</div>
+        <div class="wtg">CDS Program</div>
+        <div class="wv">RWJBarnabas Health</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2025</div>
+        <div class="wt">Navigating an IV fluid shortage: barcode integration + nursing data drives 44% reduction, shorter LOS</div>
+        <div class="wtg">Operational Intelligence</div>
+        <div class="wv">J. Healthcare Quality</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2025</div>
+        <div class="wt">Sepsis mortality initiative — &gt;3% absolute reduction across 12 hospitals via bundle compliance &amp; coding</div>
+        <div class="wtg">Quality Program</div>
+        <div class="wv">RWJBarnabas Health</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2025</div>
+        <div class="wt">AI and ICU Design: enhancing critical-care efficiency</div>
+        <div class="wtg">Oral Presentation</div>
+        <div class="wv">CHEST Annual Meeting</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2024</div>
+        <div class="wt">Enterprise deterioration-index rollout: 18–26% ICU mortality reduction, recognized at Epic UGM</div>
+        <div class="wtg">Predictive Intelligence</div>
+        <div class="wv">Epic UGM Feature</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2024</div>
+        <div class="wt">Respiratory virus surveillance dashboard detecting upticks 2 weeks before CDC data</div>
+        <div class="wtg">Operational Intelligence</div>
+        <div class="wv">RWJBarnabas Health</div>
+      </div>
+      <div class="work-row">
+        <div class="wy">2017</div>
+        <div class="wt">Asynchronous automated electronic laboratory result notifications: a systematic review</div>
+        <div class="wtg">Systematic Review</div>
+        <div class="wv">JAMIA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Outcomes, not just <em>intelligence</em> — let's build something that moves a number.</h2>
+    <p class="sub">Engagements begin with a 30-minute scoping call — no deck, no pitch. If there's a fit, we follow with a two-week discovery and a fixed-scope proposal. <strong>Clinical and quality programs</strong> typically run three to nine months. <strong>Predictive and operational intelligence</strong> can be scoped as ongoing delivery. <strong>LLM infrastructure</strong> is available for licensing or deployment partnership.</p>
+    <div class="contact-line">
+      <div><span class="k">Email</span><a href="mailto:tom@nahass.ai">tom@nahass.ai</a></div>
+      <div><span class="k">Direct</span><a href="mailto:tom.nahass@gmail.com">tom.nahass@gmail.com</a></div>
+      <div><span class="k">Web</span><a href="https://nahass.ai">nahass.ai</a></div>
+      <div><span class="k">Based</span>New Jersey · New York</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="wrap">
+  <footer>
+    <div>
+      <span class="foot-logo">nahass</span>
+      <span style="color:var(--signal);margin:0 6px;">●</span>
+      AI — Actionable Intelligence, PLLC
+    </div>
+    <div>© 2026 · All rights reserved</div>
+    <div>MSSQL · Python · R · Tableau · Snowflake · GCP · Azure · AWS</div>
+  </footer>
+</div>
+
+</body>
+</html>
