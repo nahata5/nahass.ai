@@ -54,11 +54,35 @@
   .pub a:hover { border-bottom-color: var(--accent); }
   @media (max-width: 640px) { .pub { grid-template-columns: 1fr; gap: var(--s-1); } }
 
+  /* Print: the whole CV on two Letter pages. Two columns and tight leading do the
+     work; the old rule broke every section onto a fresh page, which alone cost
+     about a dozen. Entries and citations still never split across a column. */
   @media print {
-    .nav-shell, .toc, .foot, .cv-actions { display: none !important; }
-    .cv-layout { grid-template-columns: 1fr; padding-bottom: 0; }
-    body { background: #fff; font-size: 10.5pt; }
-    .cv-sec { break-inside: avoid-page; }
+    @page { size: Letter; margin: 0.42in 0.5in; }
+    .nav-shell, .toc, .toc-m, .foot, .cv-actions, .skip { display: none !important; }
+    body { background: #fff; font-size: 7pt; line-height: 1.22; color: #000; }
+    .wrap { max-width: none; padding-inline: 0; }
+    .cv-layout { display: block; padding-bottom: 0; }
+    .cv-head { padding-block: 0 4pt; }
+    .cv-head h1 { font-size: 14pt; max-width: none; margin-top: 2pt; }
+    .cv-head .lede { font-size: 7.6pt; line-height: 1.3; margin-top: 2pt; max-width: none; }
+    .cv-head .label { font-size: 6pt; }
+    .cv-head .mt-5 { margin-top: 2pt; }
+
+    .cv-layout > div { columns: 2; column-gap: 15pt; }
+    .cv-sec { padding-top: 5pt; break-inside: auto; }
+    .cv-sec > h2 { font-size: 8pt; padding-bottom: 1.5pt; break-after: avoid; }
+    .cv-sub { font-size: 5.8pt; margin-top: 4pt; margin-bottom: 0; break-after: avoid; }
+    /* screen spacing utilities are rem-based and leave a big hole under each h2 in print */
+    .cv-sec .mt-4, .cv-sec .mt-5, .cv-sec .mt-6 { margin-top: 2.5pt; }
+
+    .e { grid-template-columns: 48pt 1fr; gap: 5pt; padding: 1.4pt 0; break-inside: avoid; }
+    .e .d { font-size: 5.8pt; }
+    .e .b { font-size: 7pt; line-height: 1.22; color: #000; }
+    .pub { grid-template-columns: 10pt 1fr; gap: 4pt; padding: 1.4pt 0; font-size: 6.8pt;
+           line-height: 1.22; color: #000; break-inside: avoid; }
+    .pub::before { font-size: 5.6pt; }
+    .pub a { border-bottom: 0; color: #000; }
   }
 </style>
 </head>
