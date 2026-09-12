@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>About — Thomas A. Nahass, MD, MS, FAMIA</title>
+<meta name="description" content="Thomas A. Nahass, MD, MS, FAMIA — critical care physician, Clinical Assistant Professor at Rutgers RWJMS, and VP of Health Informatics at RWJBarnabas Health."/>
+<link rel="canonical" href="https://nahass.ai/about/"/>
+<meta property="og:title" content="About — Thomas A. Nahass, MD, MS, FAMIA"/>
+<meta property="og:description" content="Critical care physician, informaticist, and builder. Music composition to the ICU to health-system AI."/>
+<meta property="og:type" content="profile"/>
+<meta property="og:url" content="https://nahass.ai/about/"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="apple-touch-icon" href="/assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/system.css"/>
+<style>
+  .intro { padding-block: clamp(56px, 8vw, 104px) clamp(48px, 6vw, 72px); }
+  .intro-grid { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 5vw, 72px); align-items: start; }
+  .portrait { border-top: 1px solid var(--ink); padding-top: var(--s-4); }
+  .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); border-radius: var(--radius); }
+  .portrait .cap { margin-top: var(--s-3); }
+  @media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; }
+    .portrait { max-width: 320px; order: -1; } }
+  .prose p + p { margin-top: var(--s-4); }
+  .prose h3 { margin-top: var(--s-7); padding-top: var(--s-4); border-top: 1px solid var(--rule); }
+  .prose h3 + p { margin-top: var(--s-4); }
+  .path { border-top: 1px solid var(--rule); margin-top: var(--s-5); }
+  .path-row { display: grid; grid-template-columns: 130px 1fr; gap: var(--s-5); padding: var(--s-4) 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .path-row .y { font-family: var(--mono); font-size: var(--t-tiny); color: var(--faint); }
+  .path-row .d strong { display: block; font-family: var(--display); font-weight: 550; font-size: var(--t-base); letter-spacing: -.012em; }
+  .path-row .d span { font-size: var(--t-small); color: var(--muted); }
+  @media (max-width: 640px) { .path-row { grid-template-columns: 1fr; gap: var(--s-1); } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="nav-shell">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="wordmark" href="/"><b>nahass</b><i></i><span>AI</span></a>
+      <div class="nav-links">
+        <a href="/#practice">Practice</a>
+        <a href="/#work">Work</a>
+        <a href="/about/" aria-current="page">About</a>
+        <a href="/cv/">CV</a>
+        <a class="btn btn--ghost" href="https://chat.nahass.ai">Chat</a>
+        <a class="btn" href="/#contact">Connect</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="intro">
+  <div class="wrap">
+    <span class="label label--accent">About</span>
+    <div class="intro-grid mt-5">
+      <div>
+        <h1 style="max-width:14ch;">Physician. Informaticist. Builder.</h1>
+        <p class="lede mt-5">I'm Tom Nahass — a board-certified intensivist, Clinical Assistant Professor of Medicine at Rutgers Robert Wood Johnson Medical School, and Vice President of Health Informatics for the Central Region at RWJBarnabas Health.</p>
+        <div class="cluster mt-6">
+          <a class="btn" href="/cv/">Full CV</a>
+          <a class="btn btn--ghost" href="mailto:tom@nahass.ai">Request PDF</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="/assets/nahass-portrait.png" alt="Thomas A. Nahass, MD, MS, FAMIA" width="640" height="800"/>
+        <figcaption class="cap label">Thomas A. Nahass, MD · MS · FAMIA</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface">
+  <div class="wrap-narrow prose">
+    <p>I take care of critically ill patients, and I build the systems that decide what the people caring for them see. Those two jobs are usually held by different people. Holding both is the whole point — an alert designed by someone who has never been paged by it is a different object than one designed by someone who has.</p>
+
+    <p>At RWJBarnabas Health I lead health informatics across the Central Region of a twelve-hospital system: clinical decision support, AI deployment and governance, documentation integrity, quality programs, and operational analytics. The work I'm proudest of is the boring middle — the part between a model that performs well in validation and a nurse who actually does something different at 3 a.m.</p>
+
+    <h3>How I got here</h3>
+    <p>I studied music composition at Wake Forest. Composition is structure under constraint: you're given a small set of materials and asked to make something that holds together and moves people. I've never found that training irrelevant.</p>
+
+    <p>Medicine came after — a post-baccalaureate at Harvard Extension, then medical school at Rutgers RWJMS. Along the way I co-founded a digital health company, won a couple of Nicholson Foundation innovation prizes, and did freelance data science to keep the lights on. Internal medicine residency at Rutgers, then critical care fellowship at Memorial Sloan Kettering, where I built ICU management tooling because the tools I wanted didn't exist. An MS in health and clinical informatics from OHSU made formal what I'd been doing informally since 2012.</p>
+
+    <h3>What I work on now</h3>
+    <p>Early warning systems and what happens after the warning. Critical care digital twins. Large language models in clinical medicine — agentic systems and retrieval over real clinical data, with the evaluation and governance that has to come with them. I'm a co-investigator on a Rutgers BMIHAI-funded project on deep phenotyping of heart failure, and a co-mentor on an AI/ML digital-twin ICU fellowship.</p>
+
+    <p>Our deterioration-index and AI-triggered rapid response work across twelve hospitals was <a class="link" href="https://doi.org/10.1056/AIoa2500973">published in NEJM AI</a>, with an 18% reduction in risk-adjusted mortality. That result is the argument for everything else on this site: the model was the easy part.</p>
+
+    <h3>Outside the hospital</h3>
+    <p>I'm in New Jersey with my family. I still write music. I'm an Eagle Scout, which surprises approximately nobody who has watched me plan a rollout.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Path</span>
+      <h2>Training and roles.</h2>
+    </div>
+    <div class="path">
+      <div class="path-row"><div class="y">2023 — Present</div><div class="d"><strong>VP, Health Informatics (Central Region)</strong><span>RWJBarnabas Health · West Orange, NJ</span></div></div>
+      <div class="path-row"><div class="y">2022 — Present</div><div class="d"><strong>Clinical Assistant Professor, Critical Care Medicine</strong><span>Rutgers Robert Wood Johnson Medical School</span></div></div>
+      <div class="path-row"><div class="y">2022 — 2023</div><div class="d"><strong>Physician Champion</strong><span>RWJBarnabas Health · New Brunswick, NJ</span></div></div>
+      <div class="path-row"><div class="y">2020 — 2022</div><div class="d"><strong>Fellow, Critical Care Medicine</strong><span>Memorial Sloan Kettering Cancer Center · New York, NY</span></div></div>
+      <div class="path-row"><div class="y">2022</div><div class="d"><strong>MS, Health &amp; Clinical Informatics</strong><span>Oregon Health &amp; Science University</span></div></div>
+      <div class="path-row"><div class="y">2017 — 2020</div><div class="d"><strong>Resident, Internal Medicine</strong><span>Rutgers Robert Wood Johnson Medical School</span></div></div>
+      <div class="path-row"><div class="y">2017</div><div class="d"><strong>Doctor of Medicine</strong><span>Rutgers Robert Wood Johnson Medical School</span></div></div>
+      <div class="path-row"><div class="y">2014 — 2017</div><div class="d"><strong>President &amp; Co-Founder</strong><span>Copernicus Health, Inc. · New Brunswick, NJ</span></div></div>
+      <div class="path-row"><div class="y">2010</div><div class="d"><strong>BA, Music Composition</strong><span>Wake Forest University</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">At a glance</span>
+      <h2>Credentials.</h2>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Board certifications</dt><dd>Critical Care Medicine · Internal Medicine · Clinical Informatics</dd></div>
+      <div class="fact"><dt>Fellowship</dt><dd>Fellow of the American Medical Informatics Association (FAMIA)</dd></div>
+      <div class="fact"><dt>Licensure</dt><dd>New Jersey · New York · Federal DEA</dd></div>
+      <div class="fact"><dt>Research interests</dt><dd>Early warning systems · Critical care digital twins · LLMs in clinical medicine · Agentic AI &amp; RAG</dd></div>
+      <div class="fact"><dt>Recognition</dt><dd>Becker's <em>Rising Stars: Healthcare Leaders Under 40</em>, 2025 · Nicholson Foundation innovation prizes, 2014 &amp; 2015</dd></div>
+      <div class="fact"><dt>Stack</dt><dd>MSSQL · Python · R · Tableau · Snowflake · Epic Clarity/Caboodle · GCP · Azure · AWS</dd></div>
+    </dl>
+    <p class="mt-6 small muted">Complete publications, presentations, grants, and committee service on the <a class="link" href="/cv/">CV</a>.</p>
+  </div>
+</section>
+
+<section class="band inverse">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2 class="mt-5" style="max-width:20ch;">Reach out.</h2>
+    <p class="lede mt-5">Academic collaboration, advisory roles, conference presentations, and peer consultation.</p>
+    <dl class="facts mt-7" style="border-color:rgba(255,255,255,.14);">
+      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">Email</dt><dd><a class="link" href="mailto:tom@nahass.ai">tom@nahass.ai</a></dd></div>
+      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/thomas-nahass/">thomas-nahass</a></dd></div>
+      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">GitHub</dt><dd><a class="link" href="https://github.com/nahata5">nahata5</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>© 2026 Nahass AI</div>
+    <nav class="foot-nav">
+      <a href="/">Practice</a>
+      <a href="/about/">About</a>
+      <a href="/cv/">CV</a>
+      <a href="https://chat.nahass.ai">Chat</a>
+      <a href="https://www.linkedin.com/in/thomas-nahass/">LinkedIn</a>
+    </nav>
+    <div>nahass.ai</div>
+  </div>
+</footer>
+
+</body>
+</html>

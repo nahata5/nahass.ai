@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Curriculum Vitae — Thomas A. Nahass, MD, MS, FAMIA</title>
+<meta name="description" content="Curriculum vitae of Thomas A. Nahass, MD, MS, FAMIA — critical care medicine, clinical informatics, and health AI. Education, appointments, grants, publications, and presentations."/>
+<link rel="canonical" href="https://nahass.ai/cv/"/>
+<meta property="og:title" content="Curriculum Vitae — Thomas A. Nahass, MD, MS, FAMIA"/>
+<meta property="og:description" content="Education, appointments, grants, publications, and presentations."/>
+<meta property="og:type" content="profile"/>
+<meta property="og:url" content="https://nahass.ai/cv/"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="apple-touch-icon" href="/assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/system.css"/>
+<style>
+  .cv-head { padding-block: clamp(48px, 7vw, 88px) var(--s-7); }
+  .cv-layout { display: grid; grid-template-columns: 210px 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; padding-bottom: var(--s-10); }
+  .toc { position: sticky; top: 96px; border-top: 1px solid var(--ink); padding-top: var(--s-4); }
+  .toc a { display: block; font-size: var(--t-small); color: var(--muted); text-decoration: none; padding: 5px 0; transition: color .16s ease; }
+  .toc a:hover { color: var(--accent); }
+  @media (max-width: 900px) { .cv-layout { grid-template-columns: 1fr; } .toc { position: static; display: none; } }
+
+  .cv-sec { padding-top: var(--s-7); }
+  .cv-sec:first-child { padding-top: 0; }
+  .cv-sec > h2 { font-size: var(--t-h3); letter-spacing: -.012em; padding-bottom: var(--s-3); border-bottom: 1px solid var(--ink); }
+  .cv-sub { font-family: var(--mono); font-size: var(--t-micro); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-top: var(--s-6); margin-bottom: var(--s-2); }
+
+  .e { display: grid; grid-template-columns: 150px 1fr; gap: var(--s-5); padding: var(--s-4) 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .e .d { font-family: var(--mono); font-size: var(--t-tiny); color: var(--faint); letter-spacing: .03em; }
+  .e .b strong { font-weight: 550; color: var(--ink); }
+  .e .b { font-size: var(--t-small); color: var(--muted); line-height: 1.55; }
+  .e .b em { font-style: normal; color: var(--ink-2); }
+  @media (max-width: 640px) { .e { grid-template-columns: 1fr; gap: var(--s-1); } }
+
+  .pubs { counter-reset: pub; }
+  .pub { display: grid; grid-template-columns: 34px 1fr; gap: var(--s-4); padding: var(--s-4) 0; border-bottom: 1px solid var(--rule); font-size: var(--t-small); line-height: 1.6; color: var(--ink-2); }
+  .pub::before { counter-increment: pub; content: counter(pub); font-family: var(--mono); font-size: var(--t-tiny); color: var(--faint); }
+  .pub .self { font-weight: 600; color: var(--ink); }
+  .pub cite { font-style: italic; color: var(--muted); }
+  .pub a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(15,94,84,.3); }
+  .pub a:hover { border-bottom-color: var(--accent); }
+  @media (max-width: 640px) { .pub { grid-template-columns: 1fr; gap: var(--s-1); } }
+
+  @media print {
+    .nav-shell, .toc, .foot, .cv-actions { display: none !important; }
+    .cv-layout { grid-template-columns: 1fr; padding-bottom: 0; }
+    body { background: #fff; font-size: 10.5pt; }
+    .cv-sec { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="nav-shell">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="wordmark" href="/"><b>nahass</b><i></i><span>AI</span></a>
+      <div class="nav-links">
+        <a href="/#practice">Practice</a>
+        <a href="/#work">Work</a>
+        <a href="/about/">About</a>
+        <a href="/cv/" aria-current="page">CV</a>
+        <a class="btn btn--ghost" href="https://chat.nahass.ai">Chat</a>
+        <a class="btn" href="/#contact">Connect</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="cv-head">
+  <div class="wrap">
+    <span class="label label--accent">Curriculum Vitae</span>
+    <h1 class="mt-5" style="max-width:16ch;">Thomas A. Nahass, MD, MS, FAMIA</h1>
+    <p class="lede mt-5">Vice President of Health Informatics, Central Region, RWJBarnabas Health · Clinical Assistant Professor, Department of Medicine, Division of Pulmonary &amp; Critical Care, Rutgers Robert Wood Johnson Medical School.</p>
+    <div class="cluster mt-6 cv-actions">
+      <button class="btn" type="button" id="printcv">Print / save as PDF</button>
+      <a class="btn btn--ghost" href="mailto:tom@nahass.ai">tom@nahass.ai</a>
+    </div>
+    <p class="mt-5 label">Updated June 2026</p>
+  </div>
+</section>
+
+<div class="wrap cv-layout">
+
+  <nav class="toc" aria-label="CV sections">
+    <a href="#education">Education</a>
+    <a href="#training">Postgraduate training</a>
+    <a href="#certification">Certification &amp; licensure</a>
+    <a href="#employment">Employment</a>
+    <a href="#grants">Grants</a>
+    <a href="#projects">Projects &amp; initiatives</a>
+    <a href="#societies">Societies</a>
+    <a href="#honors">Honors &amp; awards</a>
+    <a href="#committees">Committee service</a>
+    <a href="#research">Research interests</a>
+    <a href="#publications">Publications</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#grand-rounds">Grand rounds</a>
+    <a href="#posters">Posters</a>
+  </nav>
+
+  <div>
+
+    <section class="cv-sec" id="education">
+      <h2>Education</h2>
+      <div class="e"><div class="d">June 2022</div><div class="b"><strong>MS, Health &amp; Clinical Informatics</strong><br/>Oregon Health &amp; Science University, Portland, OR</div></div>
+      <div class="e"><div class="d">May 2017</div><div class="b"><strong>Doctor of Medicine (MD)</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2010 – 2011</div><div class="b"><strong>Post-Baccalaureate for Medicine</strong><br/>Harvard Extension School, Cambridge, MA</div></div>
+      <div class="e"><div class="d">May 2010</div><div class="b"><strong>BA, Music Composition</strong><br/>Wake Forest University, Winston-Salem, NC</div></div>
+    </section>
+
+    <section class="cv-sec" id="training">
+      <h2>Postgraduate training</h2>
+      <div class="e"><div class="d">2020 – 2022</div><div class="b"><strong>Fellow, Critical Care Medicine</strong><br/>Memorial Sloan Kettering Cancer Center, New York, NY</div></div>
+      <div class="e"><div class="d">2017 – 2020</div><div class="b"><strong>Resident &amp; Intern, Internal Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
+    </section>
+
+    <section class="cv-sec" id="certification">
+      <h2>Certification &amp; licensure</h2>
+      <div class="cv-sub">Board certifications</div>
+      <div class="e"><div class="d">2023 – 2032</div><div class="b"><strong>Clinical Informatics</strong><br/>American Board of Preventive Medicine</div></div>
+      <div class="e"><div class="d">2023 – 2032</div><div class="b"><strong>Critical Care Medicine</strong><br/>American Board of Internal Medicine</div></div>
+      <div class="e"><div class="d">2020 – 2030</div><div class="b"><strong>Internal Medicine</strong><br/>American Board of Internal Medicine</div></div>
+      <div class="cv-sub">Licensure</div>
+      <div class="e"><div class="d">Active</div><div class="b"><strong>New Jersey</strong> · Medical license</div></div>
+      <div class="e"><div class="d">Active</div><div class="b"><strong>New York</strong> · Medical license</div></div>
+      <div class="e"><div class="d">Since 2020</div><div class="b"><strong>Federal</strong> · DEA registration</div></div>
+    </section>
+
+    <section class="cv-sec" id="employment">
+      <h2>Employment</h2>
+      <div class="e"><div class="d">2023 – Present</div><div class="b"><strong>Vice President of Health Informatics (Central Region)</strong><br/>RWJBarnabas Health, West Orange, NJ</div></div>
+      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Clinical Assistant Professor of Critical Care Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2022 – 2023</div><div class="b"><strong>Physician Champion</strong><br/>RWJBarnabas Health, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2020 – 2022</div><div class="b"><strong>Fellow Physician, Critical Care</strong><br/>Memorial Sloan Kettering Cancer Center, New York, NY</div></div>
+      <div class="e"><div class="d">2017 – 2020</div><div class="b"><strong>Resident Physician, Internal Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2014 – 2017</div><div class="b"><strong>President &amp; Co-Founder</strong><br/>Copernicus Health, Inc., New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2015 – 2017</div><div class="b"><strong>Freelance Data Science Developer</strong><br/>Upwork, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2012 – 2013</div><div class="b"><strong>Clinical Informatics Coordinator</strong><br/>ID Care, Hillsborough, NJ</div></div>
+    </section>
+
+    <section class="cv-sec" id="grants">
+      <h2>Grant-funded projects</h2>
+      <div class="e"><div class="d">2026</div><div class="b"><strong>Co-Principal Investigator</strong><br/><em>A Precision Medicine-Based Deep Phenotyping of Heart Failure Leveraging Artificial Intelligence Tools.</em> PI: P. Kachroo. Funded by Rutgers BMIHAI.</div></div>
+      <div class="e"><div class="d">2026</div><div class="b"><strong>Co-Mentor</strong><br/><em>Advancing ICU Care with Real-Time, AI/ML-Driven, Patient-Specific Digital Twins (AID-TWIN).</em> Lead: J. Sunderram. Funded by Rutgers BMIHAI PAIR Fellowship.</div></div>
+    </section>
+
+    <section class="cv-sec" id="projects">
+      <h2>Key projects &amp; initiatives</h2>
+      <div class="e"><div class="d">2025</div><div class="b"><strong>AutoCDI implementation</strong><br/>Multi-phased documentation strategy; CMI increased 0.4, mortality index reduced 1.2 → 0.7, ~$50M incremental revenue captured.</div></div>
+      <div class="e"><div class="d">2025</div><div class="b"><strong>HRRP reduction project</strong><br/>Rule-based system to identify, flag, and notify team members of pending readmissions — targeting care coordination in the ED and at discharge, using the Epic Risk of Readmission cognitive computing model.</div></div>
+      <div class="e"><div class="d">2025</div><div class="b"><strong>IMRM critical care mortality reduction</strong><br/>Integrated Epic's ICU Risk of Readmission or Mortality score into intensivist workflow for patients at high risk of ICU return.</div></div>
+      <div class="e"><div class="d">2025</div><div class="b"><strong>Physician Builder program leadership</strong><br/>Established and led an informatics program of 25+ Physician Builders and 45 SmartUsers.</div></div>
+      <div class="e"><div class="d">2024 – 2025</div><div class="b"><strong>Sepsis mortality initiative</strong><br/>Coding and clinical interventions targeting source control and bundle compliance; &gt;3% absolute mortality reduction across 12 hospitals.</div></div>
+      <div class="e"><div class="d">2024 – 2025</div><div class="b"><strong>Physician Builder enhancements</strong><br/>Reduced CDI no-response rates, added discharge clarification notes, increased DNR documentation accuracy by 10%.</div></div>
+      <div class="e"><div class="d">2024</div><div class="b"><strong>Respiratory virus dashboard</strong><br/>Real-time MSSQL/Tableau tool detecting upticks two weeks ahead of CDC data, enabling timely masking mandates.</div></div>
+      <div class="e"><div class="d">2024</div><div class="b"><strong>IV fluid shortage management</strong><br/>System-wide dashboard achieving 44% fluid reduction while shortening length of stay; subject of national publication.</div></div>
+      <div class="e"><div class="d">2024</div><div class="b"><strong>Deterioration index rollout</strong><br/>Directed 12-hospital implementation associated with reduced mortality; recognized at Epic UGM and published in <em>NEJM AI</em>.</div></div>
+    </section>
+
+    <section class="cv-sec" id="societies">
+      <h2>Professional societies</h2>
+      <div class="e"><div class="d">2018 – Present</div><div class="b"><strong>Fellow</strong> · American Medical Informatics Association (AMIA)</div></div>
+      <div class="e"><div class="d">2026 – Present</div><div class="b"><strong>Member</strong> · American College of Physicians</div></div>
+      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Member</strong> · American Thoracic Society</div></div>
+      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Member</strong> · American Medical Association</div></div>
+      <div class="e"><div class="d">2020 – Present</div><div class="b"><strong>Member</strong> · Society of Critical Care Medicine</div></div>
+      <div class="e"><div class="d">2020 – Present</div><div class="b"><strong>Member</strong> · American College of Chest Physicians</div></div>
+    </section>
+
+    <section class="cv-sec" id="honors">
+      <h2>Honors &amp; awards</h2>
+      <div class="e"><div class="d">2025</div><div class="b"><strong>Rising Stars: Healthcare Leaders Under 40</strong> · Becker's Hospital Review</div></div>
+      <div class="e"><div class="d">2015</div><div class="b"><strong>First Place ($50,000)</strong> · Nicholson Foundation Healthcare Delivery Innovation Startup Competition</div></div>
+      <div class="e"><div class="d">2014</div><div class="b"><strong>First Place ($5,000)</strong> · Nicholson Foundation Healthcare Delivery Innovation Idea-thon</div></div>
+      <div class="e"><div class="d">2006</div><div class="b"><strong>Eagle Scout</strong> · Boy Scouts of America</div></div>
+    </section>
+
+    <section class="cv-sec" id="committees">
+      <h2>Hospital committee service</h2>
+      <div class="cv-sub">Executive &amp; chair roles</div>
+      <div class="e"><div class="d">2026 – Present</div><div class="b"><strong>Member</strong>, AI Center of Excellence Executive Council · Rutgers Health &amp; RWJBarnabas Health</div></div>
+      <div class="e"><div class="d">2026 – Present</div><div class="b"><strong>Member</strong>, Learning Health System Executive Steering Committee · Rutgers Health &amp; RWJBarnabas Health</div></div>
+      <div class="e"><div class="d">2026 – Present</div><div class="b"><strong>Member</strong>, CDB Governance Council · RWJBarnabas Health</div></div>
+      <div class="e"><div class="d">2025 – Present</div><div class="b"><strong>Chair</strong>, Sepsis Mortality Steering Committee · RWJBarnabas Health</div></div>
+      <div class="cv-sub">Committee memberships</div>
+      <div class="e"><div class="d">2025 – Present</div><div class="b"><strong>Voting Member</strong>, Clinical Data Governance Committee</div></div>
+      <div class="e"><div class="d">2023 – Present</div><div class="b"><strong>Member</strong>, System Mortality Committee · RWJBarnabas Health</div></div>
+      <div class="e"><div class="d">2023 – Present</div><div class="b"><strong>Member</strong>, Oncology Mortality Review Committee · RWJBarnabas Health</div></div>
+      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Member</strong>, Physician Advisor Council · Robert Wood Johnson University Hospital</div></div>
+      <div class="e"><div class="d">2018 – 2020</div><div class="b"><strong>Member</strong>, Graduate Medical Education Committee (Resident Council) · Rutgers RWJMS</div></div>
+      <div class="e"><div class="d">2013 – 2020</div><div class="b"><strong>Member</strong>, Physician IT Committee · RWJBarnabas Health</div></div>
+    </section>
+
+    <section class="cv-sec" id="research">
+      <h2>Research interests</h2>
+      <p class="mt-5">Early warning systems · Critical care digital twins · Large language models in clinical medicine · Agentic AI · Retrieval-augmented generation</p>
+    </section>
+
+    <section class="cv-sec" id="publications">
+      <h2>Publications</h2>
+      <div class="pubs mt-5">
+        <div class="pub"><div><span class="self">Nahass TA</span>, Hanna JS, Liu N, Martinez N, Halm EA, Rockman A, Roy J, Gilligan C, Murtha AP, Gracias V, Anderson R, O'Mahony S. Implementation of an AI-triggered rapid response — association with mortality. <cite>NEJM AI</cite>. 2026. <a href="https://doi.org/10.1056/AIoa2500973">doi:10.1056/AIoa2500973</a></div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Parikh PD, Gilligan C, O'Mahony S, Loftus ML, Holecek NE, Anderson RA, Granet KM. Navigating an intravenous fluid shortage crisis: a health system's response to a hurricane-induced supply disruption. <cite>Journal for Healthcare Quality</cite>. 2025. <a href="https://doi.org/10.1097/JHQ.0000000000000484">doi:10.1097/JHQ.0000000000000484</a></div></div>
+        <div class="pub"><div>Rausen MS, <span class="self">Nahass TA</span>, Halpern NA. Novel technology deployed for remote ventilator management by respiratory therapists during the COVID-19 pandemic: lessons learned.</div></div>
+        <div class="pub"><div>Orfanos S, El Husseini I, <span class="self">Nahass TA</span>, Radbel J, Hussain S. Observational study of the use of recombinant tissue-type plasminogen activator in COVID-19 shows a decrease in physiological dead space. <cite>ERJ Open Research</cite>. 2020;6(4):00455–2020.</div></div>
+        <div class="pub"><div>Lowenthal J, Kunadia J, Bose V, Xu J, <span class="self">Nahass TA</span>, Iwata I. Clindamycin-induced rhabdomyolysis in the setting of mitochondrial myopathy. <cite>Case Reports in Internal Medicine</cite>. 2019;6(3).</div></div>
+        <div class="pub"><div>Slovis BH, <span class="self">Nahass TA</span>, Salmasian H, Kuperman G, Vawdrey DK. Asynchronous automated electronic laboratory result notifications: a systematic review. <cite>Journal of the American Medical Informatics Association</cite>. 2017;24(6):1173–1183.</div></div>
+        <div class="pub"><div>Kasabwala K, Morton CM, Svider PF, <span class="self">Nahass TA</span>, Eloy JA, Jackson-Rosario I. Factors influencing scholarly impact: does urology fellowship training affect research output? <cite>Journal of Surgical Education</cite>. 2014;71(3):345–352.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Nahass RG. Electronic health record technology. <cite>JAMA</cite>. 2012;307(21):2255.</div></div>
+      </div>
+    </section>
+
+    <section class="cv-sec" id="presentations">
+      <h2>Abstracts &amp; presentations</h2>
+      <div class="pubs mt-5">
+        <div class="pub"><div><span class="self">Nahass TA</span>, Halpern N, Fowler C, Tlimat A. AI and ICU design: enhancing critical care efficiency. Oral presentation, CHEST 2025 Annual Meeting; October 2025; Chicago, IL.</div></div>
+        <div class="pub"><div>Bag A, El Husseini I, <span class="self">Nahass TA</span>. Association of central venous catheter occlusions and bloodstream infections: a retrospective study. <cite>Critical Care Medicine</cite>. 2025. <a href="https://doi.org/10.1097/01.CCM.0001100932.03195.11">doi:10.1097/01.CCM.0001100932.03195.11</a></div></div>
+        <div class="pub"><div>Manfra A, Guardia J, Wachuku C, <span class="self">Nahass TA</span>. Beta-blocker and calcium channel blocker toxicity in morbid obesity treated with HIET. <cite>Critical Care Medicine</cite>. 2025. <a href="https://doi.org/10.1097/01.CCM.0001102652.06498.ED">doi:10.1097/01.CCM.0001102652.06498.ED</a></div></div>
+        <div class="pub"><div>Chen C, Ge D, Melegari C, Radbel JM, <span class="self">Nahass TA</span>. Excessive inflammation associated with granulocyte-colony stimulating factor in critically ill cancer patients with myelosuppression: a retrospective study of the MIMIC-IV database. <cite>Chest</cite>. 2023. <a href="https://doi.org/10.1016/j.chest.2023.07.1202">doi:10.1016/j.chest.2023.07.1202</a></div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Tayban YD, Chawla S. EHR integration of the ROX and ROX-HR scores to monitor respiratory status in COVID-19 patients. SCCM Critical Care Congress; April 2022; Virtual.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Domaratzky M, Surendran R, Levytska N, Hotchandani N, Patel V, Schaer DA, Hussain S. Retrospective review of readmissions to the ICU related to social determinants of health. Accepted for oral presentation, ATS International Conference; May 2020; Philadelphia, PA. (Conference cancelled — COVID-19)</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Surendran R, Patel V, Domaratzky M, Levytska N, Hussain S. Social determinants of health and ICU readmission. Oral presentation, SCCM 49th Critical Care Congress; February 2020; Orlando, FL.</div></div>
+      </div>
+    </section>
+
+    <section class="cv-sec" id="grand-rounds">
+      <h2>Grand rounds presentations</h2>
+      <div class="pubs mt-5">
+        <div class="pub"><div><span class="self">Nahass TA</span>. Evolution of early warning systems and our implementation of the deterioration index. Grand Rounds, Trinitas Regional Medical Center; 2026; Elizabeth, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>. Evolution of early warning systems and our implementation of the deterioration index. Grand Rounds, Rutgers RWJMS; 2026; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>. Unlocking Epic: a program director's guide to clinical informatics and learner-led innovation. Grand Rounds; December 2025.</div></div>
+      </div>
+    </section>
+
+    <section class="cv-sec" id="posters">
+      <h2>Poster presentations</h2>
+      <div class="pubs mt-5">
+        <div class="pub"><div>Friedman J, <span class="self">Nahass TA</span>. A question of anticoagulation: mortality of pulmonary embolism in the intensive care unit. <cite>American Journal of Respiratory and Critical Care Medicine</cite>. 2024.</div></div>
+        <div class="pub"><div>Melegari C, Chen C, Radbel JM, <span class="self">Nahass TA</span>. Sepsis-associated cytokine storm despite bone marrow suppression. <cite>Chest</cite>. 2023. <a href="https://doi.org/10.1016/j.chest.2023.07.1154">doi:10.1016/j.chest.2023.07.1154</a></div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Tayban YD, Kirnicinii G, Halpern NA. ICU Census: the critical care management system for an oncologic ICU. AMIA 2022 Informatics Summit; March 2022; Chicago, IL.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Ward C, Dave P, Prister J, Sharma R. Descriptive analysis of an internal medicine residency recruitment website. AMIA 2020 Informatics Summit; March 2020; Houston, TX. (Conference cancelled — COVID-19)</div></div>
+        <div class="pub"><div>Setoguchi S, <span class="self">Nahass TA</span>, Iwata I, Read J, Nommennacher E, Strom B, Gerhard T, Huang C, Robinson D. Defining heat exposure in a climate-drug interaction study: a pharmacoepidemiologic approach. 35th International Conference on Pharmacoepidemiology &amp; Therapeutic Risk Management; August 2019; Philadelphia, PA.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Plazonik K, Iwata SS. Resident data sandbox: creating efficient IT infrastructure for postgraduate clinical research training. Rutgers RWJMS Department of Internal Medicine Research Day; May 2019; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Gandhi P, Iwata SS. Heatwaves, mortality, and hospitalizations in the elderly: visualization of big national heatwave data. Rutgers RWJMS Department of Internal Medicine Research Day; May 2019; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Ward C, Dave P, Prister J, Sharma R. Descriptive analysis of an internal medicine residency recruitment website. Rutgers RWJMS Department of Internal Medicine Research Day; May 2019; New Brunswick, NJ.</div></div>
+        <div class="pub"><div>Kunadia J, Lowenthal J, Bose V, Xu J, <span class="self">Nahass TA</span>, Iwata I. Clindamycin-induced rhabdomyolysis in the setting of mitochondrial myopathy. Mid-Atlantic Society of General Internal Medicine Conference; November 2018; Morristown, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>. Beyond documentation: leveraging the EMR to generate meaningful datasets. Rutgers RWJMS Department of Internal Medicine Research Day; May 2018; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, et al. Improving monofilament testing in clinic patients with uncontrolled diabetes: a quality improvement initiative. Rutgers RWJMS Department of Internal Medicine Research Day; May 2018; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, et al. Improving urine albumin testing in diabetic patients. Rutgers RWJMS Department of Internal Medicine Research Day; May 2018; New Brunswick, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Slovis BH, Salmasian H, Kuperman G, Vawdrey DK. A simple, subscription-based clinical result notification system. 2016 IEEE International Conference on Healthcare Informatics (ICHI); October 2016:309.</div></div>
+        <div class="pub"><div>David JA, Schild SS, Friel BJ, Haskel JH, <span class="self">Nahass TA</span>. A unique solution to a common problem: mHealth in type 2 diabetes. Integrative Health Symposium, New Jersey Medical School; September 2016; Newark, NJ.</div></div>
+        <div class="pub"><div><span class="self">Nahass TA</span>, Pittarelli L, McManus E, Seenivasan M, Nahass RG. The greying of an epidemic: a descriptive study of HIV in patients over 70 years of age. American Society for Microbiology Conference; May 2013; Denver, CO.</div></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<script>document.getElementById("printcv").addEventListener("click",function(){window.print();});</script>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>© 2026 Nahass AI</div>
+    <nav class="foot-nav">
+      <a href="/">Practice</a>
+      <a href="/about/">About</a>
+      <a href="/cv/">CV</a>
+      <a href="https://chat.nahass.ai">Chat</a>
+      <a href="https://www.linkedin.com/in/thomas-nahass/">LinkedIn</a>
+    </nav>
+    <div>nahass.ai</div>
+  </div>
+</footer>
+
+</body>
+</html>
