@@ -17,13 +17,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/system.css"/>
 <style>
-  .intro { padding-block: clamp(56px, 8vw, 104px) clamp(48px, 6vw, 72px); }
-  .intro-grid { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 5vw, 72px); align-items: start; }
+  .intro { padding-block: clamp(28px, 3.5vw, 52px) clamp(40px, 5vw, 64px); }
+  .intro-grid { display: grid; grid-template-columns: 1fr 380px; gap: clamp(32px, 4vw, 56px); align-items: start; }
   .portrait { border-top: 1px solid var(--ink); padding-top: var(--s-4); }
-  .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: contrast(1.04); border-radius: var(--radius); }
+  .portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; filter: contrast(1.04); border-radius: var(--radius); }
   .portrait .cap { margin-top: var(--s-3); }
-  @media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; }
-    .portrait { max-width: 320px; order: -1; } }
+  @media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+    .portrait { max-width: 300px; } }
   .prose p + p { margin-top: var(--s-4); }
   .prose h3 { margin-top: var(--s-7); padding-top: var(--s-4); border-top: 1px solid var(--rule); }
   .prose h3 + p { margin-top: var(--s-4); }
