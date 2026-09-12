@@ -54,13 +54,14 @@
   .pub a:hover { border-bottom-color: var(--accent); }
   @media (max-width: 640px) { .pub { grid-template-columns: 1fr; gap: var(--s-1); } }
 
-  /* Print: the whole CV on two Letter pages. Two columns and tight leading do the
-     work; the old rule broke every section onto a fresh page, which alone cost
-     about a dozen. Entries and citations still never split across a column. */
+  /* Print: the whole CV on three Letter pages at a readable 8pt. Two columns do the
+     work; the old rule broke every section onto a fresh page, which alone cost about
+     a dozen. Entries and citations never split across a column. 7pt holds two pages
+     if that is ever wanted again. */
   @media print {
     @page { size: Letter; margin: 0.42in 0.5in; }
     .nav-shell, .toc, .toc-m, .foot, .cv-actions, .skip { display: none !important; }
-    body { background: #fff; font-size: 7pt; line-height: 1.22; color: #000; }
+    body { background: #fff; font-size: 8pt; line-height: 1.3; color: #000; }
     .wrap { max-width: none; padding-inline: 0; }
     .cv-layout { display: block; padding-bottom: 0; }
     .cv-head { padding-block: 0 4pt; }
@@ -70,17 +71,17 @@
     .cv-head .mt-5 { margin-top: 2pt; }
 
     .cv-layout > div { columns: 2; column-gap: 15pt; }
-    .cv-sec { padding-top: 5pt; break-inside: auto; }
-    .cv-sec > h2 { font-size: 8pt; padding-bottom: 1.5pt; break-after: avoid; }
-    .cv-sub { font-size: 5.8pt; margin-top: 4pt; margin-bottom: 0; break-after: avoid; }
+    .cv-sec { padding-top: 6pt; break-inside: auto; }
+    .cv-sec > h2 { font-size: 9pt; padding-bottom: 2pt; break-after: avoid; }
+    .cv-sub { font-size: 6.4pt; margin-top: 5pt; margin-bottom: 0; break-after: avoid; }
     /* screen spacing utilities are rem-based and leave a big hole under each h2 in print */
-    .cv-sec .mt-4, .cv-sec .mt-5, .cv-sec .mt-6 { margin-top: 2.5pt; }
+    .cv-sec .mt-4, .cv-sec .mt-5, .cv-sec .mt-6 { margin-top: 3pt; }
 
-    .e { grid-template-columns: 48pt 1fr; gap: 5pt; padding: 1.4pt 0; break-inside: avoid; }
-    .e .d { font-size: 5.8pt; }
-    .e .b { font-size: 7pt; line-height: 1.22; color: #000; }
-    .pub { grid-template-columns: 10pt 1fr; gap: 4pt; padding: 1.4pt 0; font-size: 6.8pt;
-           line-height: 1.22; color: #000; break-inside: avoid; }
+    .e { grid-template-columns: 54pt 1fr; gap: 6pt; padding: 2.2pt 0; break-inside: avoid; }
+    .e .d { font-size: 6.4pt; }
+    .e .b { font-size: 8pt; line-height: 1.3; color: #000; }
+    .pub { grid-template-columns: 11pt 1fr; gap: 5pt; padding: 2.2pt 0; font-size: 7.8pt;
+           line-height: 1.3; color: #000; break-inside: avoid; }
     .pub::before { font-size: 5.6pt; }
     .pub a { border-bottom: 0; color: #000; }
   }
