@@ -22,7 +22,16 @@
   .toc { position: sticky; top: 96px; border-top: 1px solid var(--ink); padding-top: var(--s-4); }
   .toc a { display: block; font-size: var(--t-small); color: var(--muted); text-decoration: none; padding: 5px 0; transition: color .16s ease; }
   .toc a:hover { color: var(--accent); }
-  @media (max-width: 900px) { .cv-layout { grid-template-columns: 1fr; } .toc { position: static; display: none; } }
+  @media (max-width: 900px) { .cv-layout { grid-template-columns: 1fr; gap: var(--s-5); } .toc { display: none; } }
+  .toc-m { display: none; border: 1px solid var(--rule-2); border-radius: var(--radius); margin-bottom: var(--s-6); }
+  .toc-m > summary { cursor: pointer; list-style: none; padding: 14px var(--s-4); font-family: var(--mono); font-size: var(--t-micro); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .toc-m > summary::-webkit-details-marker { display: none; }
+  .toc-m > summary::after { content: "+"; float: right; font-size: 15px; line-height: 1; }
+  .toc-m[open] > summary::after { content: "\2013"; }
+  .toc-m nav { padding: 0 var(--s-4) var(--s-3); display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 var(--s-4); }
+  .toc-m nav a { display: block; padding: 9px 0; font-size: var(--t-small); color: var(--ink-2); text-decoration: none; border-top: 1px solid var(--rule); }
+  @media (max-width: 900px) { .toc-m { display: block; } }
+  @media (max-width: 480px) { .toc-m nav { grid-template-columns: 1fr; } }
 
   .cv-sec { padding-top: var(--s-7); }
   .cv-sec:first-child { padding-top: 0; }
@@ -66,7 +75,7 @@
         <a href="/about/">About</a>
         <a href="/cv/" aria-current="page">CV</a>
         <a class="btn btn--ghost" href="https://chat.nahass.ai">Chat</a>
-        <a class="btn" href="/#contact">Connect</a>
+        <a class="btn btn--connect" href="/#contact">Connect</a>
       </div>
     </nav>
   </div>
@@ -78,10 +87,11 @@
   <div class="wrap">
     <span class="label label--accent">Curriculum Vitae</span>
     <h1 class="mt-5" style="max-width:16ch;">Thomas A. Nahass, MD, MS, FAMIA</h1>
-    <p class="lede mt-5">Vice President of Health Informatics, Central Region, RWJBarnabas Health · Clinical Assistant Professor, Department of Medicine, Division of Pulmonary &amp; Critical Care, Rutgers Robert Wood Johnson Medical School.</p>
+    <p class="lede mt-5">Vice President of Health Informatics, Central Region, RWJBarnabas Health · Assistant Professor, Department of Medicine, Division of Pulmonary &amp; Critical Care, Rutgers Robert Wood Johnson Medical School.</p>
     <div class="cluster mt-6 cv-actions">
-      <button class="btn" type="button" id="printcv">Print / save as PDF</button>
-      <a class="btn btn--ghost" href="mailto:tom@nahass.ai">tom@nahass.ai</a>
+      <a class="btn" href="/assets/nahass-cv.pdf">Download PDF</a>
+      <button class="btn btn--ghost" type="button" id="printcv">Print</button>
+      <a class="btn btn--ghost" href="mailto:tom@nahass.ai">Email</a>
     </div>
     <p class="mt-5 label">Updated June 2026</p>
   </div>
@@ -107,8 +117,27 @@
   </nav>
 
   <div>
+    <details class="toc-m">
+      <summary>Jump to a section</summary>
+      <nav aria-label="CV sections">
+    <a href="#education">Education</a>
+    <a href="#training">Postgraduate training</a>
+    <a href="#certification">Certification &amp; licensure</a>
+    <a href="#employment">Employment</a>
+    <a href="#grants">Grants</a>
+    <a href="#projects">Projects &amp; initiatives</a>
+    <a href="#societies">Societies</a>
+    <a href="#honors">Honors &amp; awards</a>
+    <a href="#committees">Committee service</a>
+    <a href="#research">Research interests</a>
+    <a href="#publications">Publications</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#grand-rounds">Grand rounds</a>
+    <a href="#posters">Posters</a>
+  </nav>
+    </details>
 
-    <section class="cv-sec" id="education">
+        <section class="cv-sec" id="education">
       <h2>Education</h2>
       <div class="e"><div class="d">June 2022</div><div class="b"><strong>MS, Health &amp; Clinical Informatics</strong><br/>Oregon Health &amp; Science University, Portland, OR</div></div>
       <div class="e"><div class="d">May 2017</div><div class="b"><strong>Doctor of Medicine (MD)</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
@@ -128,16 +157,18 @@
       <div class="e"><div class="d">2023 – 2032</div><div class="b"><strong>Clinical Informatics</strong><br/>American Board of Preventive Medicine</div></div>
       <div class="e"><div class="d">2023 – 2032</div><div class="b"><strong>Critical Care Medicine</strong><br/>American Board of Internal Medicine</div></div>
       <div class="e"><div class="d">2020 – 2030</div><div class="b"><strong>Internal Medicine</strong><br/>American Board of Internal Medicine</div></div>
+      <div class="cv-sub">Epic certifications</div>
+      <div class="e"><div class="d">2022</div><div class="b"><strong>Physician Builder</strong><br/>Epic Systems</div></div>
+      <div class="e"><div class="d">2022</div><div class="b"><strong>Physician Builder, Analytics</strong><br/>Epic Systems</div></div>
+      <div class="e"><div class="d">2022</div><div class="b"><strong>Physician Builder, Healthy Planet</strong><br/>Epic Systems</div></div>
       <div class="cv-sub">Licensure</div>
-      <div class="e"><div class="d">Active</div><div class="b"><strong>New Jersey</strong> · Medical license</div></div>
-      <div class="e"><div class="d">Active</div><div class="b"><strong>New York</strong> · Medical license</div></div>
       <div class="e"><div class="d">Since 2020</div><div class="b"><strong>Federal</strong> · DEA registration</div></div>
     </section>
 
     <section class="cv-sec" id="employment">
       <h2>Employment</h2>
       <div class="e"><div class="d">2023 – Present</div><div class="b"><strong>Vice President of Health Informatics (Central Region)</strong><br/>RWJBarnabas Health, West Orange, NJ</div></div>
-      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Clinical Assistant Professor of Critical Care Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
+      <div class="e"><div class="d">2022 – Present</div><div class="b"><strong>Assistant Professor of Critical Care Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
       <div class="e"><div class="d">2022 – 2023</div><div class="b"><strong>Physician Champion</strong><br/>RWJBarnabas Health, New Brunswick, NJ</div></div>
       <div class="e"><div class="d">2020 – 2022</div><div class="b"><strong>Fellow Physician, Critical Care</strong><br/>Memorial Sloan Kettering Cancer Center, New York, NY</div></div>
       <div class="e"><div class="d">2017 – 2020</div><div class="b"><strong>Resident Physician, Internal Medicine</strong><br/>Rutgers Robert Wood Johnson Medical School, New Brunswick, NJ</div></div>
@@ -276,9 +307,12 @@
       <a href="/about/">About</a>
       <a href="/cv/">CV</a>
       <a href="https://chat.nahass.ai">Chat</a>
-      <a href="https://www.linkedin.com/in/thomas-nahass/">LinkedIn</a>
     </nav>
-    <div>nahass.ai</div>
+    <div class="social">
+    <a href="https://www.linkedin.com/in/thomas-nahass/" rel="me noopener" title="LinkedIn"><span class="name">LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://www.doximity.com/pub/thomas-nahass-md" rel="me noopener" title="Doximity"><span class="name">Doximity</span><span class="mono" aria-hidden="true">Dx</span></a>
+    <a href="https://github.com/nahata5" rel="me noopener" title="GitHub"><span class="name">GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    </div>
   </div>
 </footer>
 

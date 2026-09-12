@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>About — Thomas A. Nahass, MD, MS, FAMIA</title>
-<meta name="description" content="Thomas A. Nahass, MD, MS, FAMIA — critical care physician, Clinical Assistant Professor at Rutgers RWJMS, and VP of Health Informatics at RWJBarnabas Health."/>
+<meta name="description" content="Thomas A. Nahass, MD, MS, FAMIA — critical care physician, Assistant Professor at Rutgers RWJMS, and VP of Health Informatics at RWJBarnabas Health."/>
 <link rel="canonical" href="https://nahass.ai/about/"/>
 <meta property="og:title" content="About — Thomas A. Nahass, MD, MS, FAMIA"/>
 <meta property="og:description" content="Critical care physician, informaticist, and builder. Music composition to the ICU to health-system AI."/>
@@ -20,7 +20,7 @@
   .intro { padding-block: clamp(56px, 8vw, 104px) clamp(48px, 6vw, 72px); }
   .intro-grid { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 5vw, 72px); align-items: start; }
   .portrait { border-top: 1px solid var(--ink); padding-top: var(--s-4); }
-  .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); border-radius: var(--radius); }
+  .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: contrast(1.04); border-radius: var(--radius); }
   .portrait .cap { margin-top: var(--s-3); }
   @media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; }
     .portrait { max-width: 320px; order: -1; } }
@@ -48,7 +48,7 @@
         <a href="/about/" aria-current="page">About</a>
         <a href="/cv/">CV</a>
         <a class="btn btn--ghost" href="https://chat.nahass.ai">Chat</a>
-        <a class="btn" href="/#contact">Connect</a>
+        <a class="btn btn--connect" href="/#contact">Connect</a>
       </div>
     </nav>
   </div>
@@ -62,10 +62,10 @@
     <div class="intro-grid mt-5">
       <div>
         <h1 style="max-width:14ch;">Physician. Informaticist. Builder.</h1>
-        <p class="lede mt-5">I'm Tom Nahass — a board-certified intensivist, Clinical Assistant Professor of Medicine at Rutgers Robert Wood Johnson Medical School, and Vice President of Health Informatics for the Central Region at RWJBarnabas Health.</p>
+        <p class="lede mt-5">I'm Tom Nahass — a board-certified intensivist, Assistant Professor of Medicine at Rutgers Robert Wood Johnson Medical School, and Vice President of Health Informatics for the Central Region at RWJBarnabas Health.</p>
         <div class="cluster mt-6">
           <a class="btn" href="/cv/">Full CV</a>
-          <a class="btn btn--ghost" href="mailto:tom@nahass.ai">Request PDF</a>
+          <a class="btn btn--ghost" href="/assets/nahass-cv.pdf">Download PDF</a>
         </div>
       </div>
       <figure class="portrait">
@@ -105,7 +105,7 @@
     </div>
     <div class="path">
       <div class="path-row"><div class="y">2023 — Present</div><div class="d"><strong>VP, Health Informatics (Central Region)</strong><span>RWJBarnabas Health · West Orange, NJ</span></div></div>
-      <div class="path-row"><div class="y">2022 — Present</div><div class="d"><strong>Clinical Assistant Professor, Critical Care Medicine</strong><span>Rutgers Robert Wood Johnson Medical School</span></div></div>
+      <div class="path-row"><div class="y">2022 — Present</div><div class="d"><strong>Assistant Professor, Critical Care Medicine</strong><span>Rutgers Robert Wood Johnson Medical School</span></div></div>
       <div class="path-row"><div class="y">2022 — 2023</div><div class="d"><strong>Physician Champion</strong><span>RWJBarnabas Health · New Brunswick, NJ</span></div></div>
       <div class="path-row"><div class="y">2020 — 2022</div><div class="d"><strong>Fellow, Critical Care Medicine</strong><span>Memorial Sloan Kettering Cancer Center · New York, NY</span></div></div>
       <div class="path-row"><div class="y">2022</div><div class="d"><strong>MS, Health &amp; Clinical Informatics</strong><span>Oregon Health &amp; Science University</span></div></div>
@@ -125,11 +125,12 @@
     </div>
     <dl class="facts">
       <div class="fact"><dt>Board certifications</dt><dd>Critical Care Medicine · Internal Medicine · Clinical Informatics</dd></div>
+      <div class="fact"><dt>Epic certifications</dt><dd>Physician Builder · Physician Builder, Analytics · Physician Builder, Healthy Planet</dd></div>
       <div class="fact"><dt>Fellowship</dt><dd>Fellow of the American Medical Informatics Association (FAMIA)</dd></div>
-      <div class="fact"><dt>Licensure</dt><dd>New Jersey · New York · Federal DEA</dd></div>
+      <div class="fact"><dt>Licensure</dt><dd>Federal DEA</dd></div>
       <div class="fact"><dt>Research interests</dt><dd>Early warning systems · Critical care digital twins · LLMs in clinical medicine · Agentic AI &amp; RAG</dd></div>
       <div class="fact"><dt>Recognition</dt><dd>Becker's <em>Rising Stars: Healthcare Leaders Under 40</em>, 2025 · Nicholson Foundation innovation prizes, 2014 &amp; 2015</dd></div>
-      <div class="fact"><dt>Stack</dt><dd>MSSQL · Python · R · Tableau · Snowflake · Epic Clarity/Caboodle · GCP · Azure · AWS</dd></div>
+      <div class="fact"><dt>Stack</dt><dd>MSSQL · Python · R · Tableau · Snowflake · Epic Clarity/Caboodle/Cosmos · Clinical data models · GCP · Azure · AWS</dd></div>
     </dl>
     <p class="mt-6 small muted">Complete publications, presentations, grants, and committee service on the <a class="link" href="/cv/">CV</a>.</p>
   </div>
@@ -140,10 +141,14 @@
     <span class="label">Contact</span>
     <h2 class="mt-5" style="max-width:20ch;">Reach out.</h2>
     <p class="lede mt-5">Academic collaboration, advisory roles, conference presentations, and peer consultation.</p>
+    <div class="social mt-7">
+      <a href="https://www.linkedin.com/in/thomas-nahass/" rel="me noopener" title="LinkedIn"><span class="name">LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.doximity.com/pub/thomas-nahass-md" rel="me noopener" title="Doximity"><span class="name">Doximity</span><span class="mono" aria-hidden="true">Dx</span></a>
+      <a href="https://github.com/nahata5" rel="me noopener" title="GitHub"><span class="name">GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    </div>
     <dl class="facts mt-7" style="border-color:rgba(255,255,255,.14);">
-      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">Email</dt><dd><a class="link" href="mailto:tom@nahass.ai">tom@nahass.ai</a></dd></div>
-      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/thomas-nahass/">thomas-nahass</a></dd></div>
-      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">GitHub</dt><dd><a class="link" href="https://github.com/nahata5">nahata5</a></dd></div>
+      <div class="fact" style="border-color:rgba(255,255,255,.14);"><dt style="color:rgba(242,243,241,.5);">Contact</dt><dd><a class="link" href="mailto:tom@nahass.ai">Email</a></dd></div>
+
     </dl>
   </div>
 </section>
@@ -158,9 +163,12 @@
       <a href="/about/">About</a>
       <a href="/cv/">CV</a>
       <a href="https://chat.nahass.ai">Chat</a>
-      <a href="https://www.linkedin.com/in/thomas-nahass/">LinkedIn</a>
     </nav>
-    <div>nahass.ai</div>
+    <div class="social">
+    <a href="https://www.linkedin.com/in/thomas-nahass/" rel="me noopener" title="LinkedIn"><span class="name">LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://www.doximity.com/pub/thomas-nahass-md" rel="me noopener" title="Doximity"><span class="name">Doximity</span><span class="mono" aria-hidden="true">Dx</span></a>
+    <a href="https://github.com/nahata5" rel="me noopener" title="GitHub"><span class="name">GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    </div>
   </div>
 </footer>
 

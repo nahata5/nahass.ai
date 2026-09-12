@@ -55,6 +55,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; color-scheme: light; }
+@media (max-width: 860px) { html { scroll-padding-top: var(--s-5); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -158,10 +159,27 @@ em { font-style: italic; }
 .nav-links a[aria-current="page"] { color: var(--ink); font-weight: 550; }
 .nav-links .btn { color: #fff; }
 .nav-links .btn--ghost { color: var(--ink); }
-@media (max-width: 720px) {
-  .nav { flex-direction: column; align-items: flex-start; gap: var(--s-3); padding-block: var(--s-4); }
-  .nav-links { gap: var(--s-4); justify-content: flex-start; }
-  .nav-links .btn { display: none; }
+@media (max-width: 860px) {
+  /* A two-row sticky bar eats too much of a phone screen — let it scroll away. */
+  .nav-shell { position: static; backdrop-filter: none; background: var(--ground); }
+  .nav { flex-direction: column; align-items: stretch; gap: var(--s-3); padding-block: var(--s-3); min-height: 0; }
+  .nav-links { gap: var(--s-4) var(--s-5); justify-content: flex-start; row-gap: var(--s-2); }
+  /* Buttons stay reachable on phones — they just stop looking like buttons. */
+  .nav-links .btn { padding: 0; border: 0; background: none; color: var(--ink-2); font-family: var(--body); font-size: var(--t-small); font-weight: 450; }
+  .nav-links .btn:hover, .nav-links .btn--ghost:hover { background: none; color: var(--accent); }
+  .nav-links .btn--connect { color: var(--accent); font-weight: 550; }
+  /* 44px tap targets on narrow screens, not just on detected touch. */
+  .nav-links a, .nav-links .btn { min-height: 44px; display: inline-flex; align-items: center; }
+}
+@media (max-width: 860px) {
+  .foot-in { gap: var(--s-4); }
+  .foot-nav { gap: var(--s-2) var(--s-5); }
+  .foot-nav a { min-height: 40px; display: inline-flex; align-items: center; }
+}
+/* Comfortable tap targets on touch devices. */
+@media (hover: none) and (pointer: coarse) {
+  .nav-links a, .foot-nav a, .toc a { min-height: 44px; display: inline-flex; align-items: center; }
+  .btn { padding-block: 13px; }
 }
 
 /* --- 6. METRICS ---------------------------------------------------------- */
@@ -259,3 +277,23 @@ em { font-style: italic; }
 }
 .skip:focus { left: var(--s-4); top: var(--s-4); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+
+/* --- 13. SOCIAL ICONS ---------------------------------------------------- */
+.social { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+.social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border: 1px solid var(--rule-2);
+  border-radius: var(--radius);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+.social a:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
+.social svg { width: 19px; height: 19px; fill: currentColor; display: block; }
+.social .name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.inverse .social a { border-color: rgba(255,255,255,.28); color: rgba(242,243,241,.82); }
+.inverse .social a:hover { background: #fff; border-color: #fff; color: var(--ink); }
+/* Doximity has no icon in common icon sets; a monogram keeps the row even. */
+.social .mono { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: -.02em; line-height: 1; }
